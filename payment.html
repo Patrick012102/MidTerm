@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Payment</h1>
+    </header>
+
+    <section>
+        <h2>Customer Details</h2>
+        <div id="product-details"></div>
+        <div id="customer-details"></div>
+    </section>
+
+    <section id="payment-method">
+        <h2>Select Payment Method</h2>
+        <form id="payment-form">
+            <label>
+                <input type="radio" name="payment-method" value="COD" required> Cash on Delivery (COD)
+            </label>
+            <label>
+                <input type="radio" name="payment-method" value="GCash"> GCash
+            </label>
+            <label>
+                <input type="radio" name="payment-method" value="PayMaya"> PayMaya
+            </label>
+            <label>
+                <input type="radio" name="payment-method" value="Online Banking"> Online Banking
+            </label>
+            <button type="button" onclick="confirmPayment()">Confirm Payment</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Gadget Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
+            const customerDetails = JSON.parse(localStorage.getItem('customerDetails'));
+
+            if (selectedProduct) {
+                document.getElementById('product-details').innerHTML = `
+                    <p><strong>Product:</strong> ${selectedProduct.name}</p>
+                    <p><strong>Price:</strong> ₱${selectedProduct.price.toFixed(2)}</p>
+                `;
+            }
+
+            if (customerDetails) {
+                document.getElementById('customer-details').innerHTML = `
+                    <p><strong>Name:</strong> ${customerDetails.name}</p>
+                    <p><strong>Address:</strong> ${customerDetails.address}</p>
+                    <p><strong>Contact Number:</strong> ${customerDetails.contact}</p>
+                `;
+            }
+        };
+
+        function confirmPayment() {
+            const selectedMethod = document.querySelector('input[name="payment-method"]:checked');
+            
+            if (!selectedMethod) {
+                alert("Please select a payment method.");
+                return;
+            }
+
+            alert(`You selected ${selectedMethod.value}. Thank you for your purchase!`);
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

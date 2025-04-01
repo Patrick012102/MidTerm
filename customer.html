@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details - Gadget Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gadget Store</h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="customer.html">Customer Details</a></li>
+            </ul>
+        </nav> 
+    </header>
+
+    <section id="checkout-form">
+        <h2>Details</h2>
+        
+        <!-- Display selected product details -->
+        <div id="product-details">
+            <h3>Selected Product</h3>
+            <p><strong>Name:</strong> <span id="product-name"></span></p>
+            <p><strong>Price:</strong> ₱<span id="product-price"></span></p>
+        </div>
+
+        <form id="customer-form" onsubmit="proceedToPayment(event)">
+            <label for="customer-name">Full Name:</label>
+            <input type="text" id="customer-name" required placeholder="Enter your full name">
+            
+            <label for="customer-address">Address:</label>
+            <input type="text" id="customer-address" required placeholder="Enter your address">
+            
+            <label for="customer-contact">Contact Number:</label>
+            <input type="text" id="customer-contact" required placeholder="Enter your contact number">
+            
+            <button type="submit">Proceed to Payment</button>
+            <button type="button" onclick="cancelCheckout()">Cancel</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Gadget Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // When the customer-details page loads
+        window.onload = function() {
+            const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
+            
+            if (selectedProduct) {
+                // Display the product details
+                document.getElementById('product-name').textContent = decodeURIComponent(selectedProduct.name);
+                document.getElementById('product-price').textContent = selectedProduct.price;
+            }
+        };
+
+        function proceedToPayment(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const name = document.getElementById("customer-name").value.trim();
+            const address = document.getElementById("customer-address").value.trim();
+            const contact = document.getElementById("customer-contact").value.trim();
+            
+            if (name === "" || address === "" || contact === "") {
+                alert("Please fill in all the required fields.");
+                return;
+            }
+
+            // Store customer details in localStorage
+            localStorage.setItem("customerDetails", JSON.stringify({ name, address, contact }));
+
+            // Redirect to payment page
+            window.location.href = "payment.html";
+        }
+
+        function cancelCheckout() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

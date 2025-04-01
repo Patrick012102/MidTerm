@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>More Gadgets</h1>
+        <nav>
+            <ul>
+                <h6><a href="index.html">Home</a></h6>
+                
+            </ul>
+        </nav>
+        <div class="input-group mb-3">
+            <input type="text" id="search-bar" class="form-control" placeholder="Search products..." onkeyup="searchProducts()">
+        </div>
+        <p id="no-results" style="display: none; text-align: center; color: red;">No products found</p>
+        
+    </header>
+    
+
+    <table class="table table-bordered" id="product-table">
+        <thead>
+            <tr>
+                <th>Product Image</th>
+                <th>Product Name</th>
+                <th>Short Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+         
+            <tr>
+                <td><img src="14pro.jpg" alt="Product 1" class="img-fluid" style="width: 100px; height: 100px;"></td>
+                <td>Realme 14 pro 5G 
+                    <h6>Price:</h6><p>20,500.00</p>
+                </td>
+                <td>The realme 14 Pro 5G is the first in its class to support 120 FPS for 3 major global games, providing an e-sports-level smooth experience for gamers worldwide.</td>
+                <td>
+                    <button onclick="buyNow('Realme 14 pro 5G', 20500.00)" class="btn btn-secondary">Buy</button>
+    </td>
+    </tr>
+            
+            <tr>
+                <td><img src="c75.jpg" alt="Product 2" class="img-fluid" style="width: 100px; height: 100px;"></td>
+                <td>Realme c75
+                    <h6>Price:</h6><p>8,499.00</p>
+                </td>
+                <td> the realme C75 passes the water immersion test under a depth of 2 meters for 24 hours.</td>
+                <td>
+                <button onclick="buyNow('Realme c75', 8499.00)" class="btn btn-secondary">Buy</button>
+            </tr>
+
+            <tr>
+                <td><img src="Note60x.jpg" alt="Product 3" class="img-fluid" style="width: 100px; height: 100px;"></td>
+                <td>Realme note60x
+                    <h6>Price:</h6><p>3,799.00</p>
+                </td>
+                <td>up to 4GB RAM that can go up to 12GB through 8GB Dynamic RAM Expansion, the realme Note 60x ensures swift & responsive multi-tasking.</td>
+                <td>
+                <button onclick="buyNow('Realme note60x', 3799.00)" class="btn btn-secondary">Buy</button>
+            </tr>
+
+            <tr>
+                <td><img src="13+ 5g.jpg" alt="Product 4" class="img-fluid" style="width: 100px; height: 100px;"></td>
+                <td>Realme 13+ 5g
+                    <h6>Price:</h6><p>17,999.00</p>
+                </td>
+                <td>The realme 13+ 5G is the first in its class to support 90fps performance for 6 major global games, providing a truly e-sports-level smooth experience for gamers.</td>
+                <td>
+                    <button onclick="buyNow('Realme 13+ 5g', 17999.00)" class="btn btn-secondary">Buy</button>
+            </tr>
+
+            <tr>
+                <td><img src="12pro.jpg" alt="Product 5" class="img-fluid" style="width: 100px; height: 100px;"></td>
+                <td>Realme 12 Pro+ 5G
+                    <h6>Price:</h6><p>23,599.00</p>
+                </td>
+                <td>realme 12 Pro+ 5G is equipped with 64MP Periscope Portrait Camera, enables 3X Optical Zoom and 120X SuperZoom, which makes you a portrait master.</td>
+                <td>
+                    <button onclick="buyNow('Realme 12 Pro+ 5G', 23599.00)" class="btn btn-secondary">Buy</button>
+            </tr>
+
+            <tr>
+                <td><img src="go 1s.jpg" alt="Product 6" class="img-fluid" style="width: 100px; height: 100px;"></td>
+                <td>Tecno Spark Go 1s
+                    <h6>Price:</h6><p>3,999.00</p>
+                </td>
+                <td>Tecno Spark Go 1S Android smartphone. Announced Jan 2025. Features 6.67″ display, Helio G50 chipset, 5000 mAh battery, 64 GB storage, 3 GB RAM. </td>
+                <td>
+                    <button onclick="buyNow('Tecno Spark Go 1s', 3999.00)" class="btn btn-secondary">Buy</button>
+            </tr>
+
+            <tr>
+                <td><img src="camon.jpg" alt="Product 7" class="img-fluid" style="width: 100px; height: 100px;"></td>
+                <td>Tecno Camon 30s
+                    <h6>Price:</h6><p>10,499.00</p>
+                </td>
+                <td>Android smartphone. Announced Oct 2024. Features 6.78″ display, Helio G100 chipset, 5000 mAh battery, 256 GB storage, 8+8 GB RAM</td>
+                <td>
+                    <button onclick="buyNow('Tecno Camon 30s', 10499.00)" class="btn btn-secondary">Buy</button>
+            </tr>
+
+            <tr>
+                <td><img src="spark 30 pro.jpg" alt="Product 8" class="img-fluid" style="width: 100px; height: 100px;"></td>
+                <td>Tecno Spark 30 pro
+                    <h6>Price:</h6><p>6,599.00</p>
+                </td>
+                <td>It runs on a MediaTek Helio G100 processor with 8GB of physical RAM, Android 14 OS, and HiOS 14 software.</td>
+                <td>
+                    <button onclick="buyNow('Tecno Spark 30 pro', 6599.00)" class="btn btn-secondary">Buy</button>
+            </tr>
+
+            <tr>
+                <td><img src="bumble.jpg" alt="Product 9" class="img-fluid" style="width: 100px; height: 100px;"></td>
+                <td>Tecno Spark 30
+                    <h6>Price:</h6><p>5,799.00</p>
+                </td>
+                <td> The TECNO SPARK 30 is a "budget-friendly" smartphone that comes in Transformers Bumblebee Edition.</td>
+                <td>
+                    <button onclick="buyNow('Tecno Spark 30', 5799.00)" class="btn btn-secondary">Buy</button>
+            </tr>
+
+            <tr>
+                <td><img src="spark20.jpg" alt="Product 10" class="img-fluid" style="width: 100px; height: 100px;"></td>
+                <td>Tecno Spark 20 Pro 5G
+                    <h6>Price:</h6><p>11,599.00</p>
+                </td>
+                <td>108MP Ultra Sensing Main Camera, 5G Powerful & High-Speed Processor, 5000mAh Long-life Battery, 33W Super Charge.</td>
+                <td>
+                    <button onclick="buyNow('Tecno Spark 20 Pro 5G', 11599.00)" class="btn btn-secondary">Buy</button>
+            </tr>
+
+            <tr>
+                <td><img src="zero 40.jpg" alt="Product 11" class="img-fluid" style="width: 100px; height: 100px;"></td>
+                <td>Infinix Zero 40 5G
+                    <h6>Price:</h6><p>16,599.00</p>
+                </td>
+                <td>The Infinix ZERO 40 5G is a midrange smartphone that runs Android 14 and XOS 14.5 and is powered by MediaTek Dimensity 8200 Ultimate CPU and Mali-G610 GPU.</td>
+                <td>
+                    <button onclick="buyNow('Infinix Zero 40 5G', 16599.00)" class="btn btn-secondary">Buy</button>
+            </tr>
+
+            <tr>
+                <td><img src="flip.jpg" alt="Product 12" class="img-fluid" style="width: 100px; height: 100px;"></td>
+                <td>Infinix Zero Flip 5G
+                <h6>Price:</h6><p>26,499.00</p></td>
+                <td>Infinix Zero Flip Android smartphone. Announced Sep 2024.</td>
+                <td>
+                    <button onclick="buyNow('Infinix Zero Flip 5G', 26499.00)" class="btn btn-secondary">Buy</button>
+            </tr>
+
+            <tr>
+                <td><img src="Hot50.jpg" alt="Product 13" class="img-fluid" style="width: 100px; height: 100px;"></td>
+                <td>Infinix Hot 50 Pro+
+                    <h6>Price:</h6><p>7,499.00</p>
+                </td>
+                <td>Infinix Hot 50 Pro+ 4G Android smartphone. Announced Oct 2024.</td>
+                <td>
+                    <button onclick="buyNow('Infinix Hot 50 Pro+', 7499.00)" class="btn btn-secondary">Buy</button>
+            </tr>
+
+            <tr>
+                <td><img src="GT20.jpg" alt="Product 14" class="img-fluid" style="width: 100px; height: 100px;"></td>
+                <td>Infinix GT20 Pro 5G
+                <h6>Price:</h6><p>14,499.00</p></td>
+                <td>Infinix GT 20 Pro Android smartphone. Announced Apr 2024. </td>
+                <td>
+                    <button onclick="buyNow('Infinix GT20 Pro 5G', 14499.00)" class="btn btn-secondary">Buy</button>
+            </tr>
+
+            <tr>
+                <td><img src="note40.jpg" alt="Product 15" class="img-fluid" style="width: 100px; height: 100px;"></td>
+                <td>Infinix Note 40 Pro
+                    <h6>Price:</h6><p>9,499.00</p>
+                </td>
+                <td>Infinix Note 40 Pro Android smartphone. Announced Mar 2024.</td>
+                <td>
+                    <button onclick="buyNow('Infinix Note 40 Pro', 9499.00)" class="btn btn-secondary">Buy</button>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<footer class="text-center mt-5">
+    <p>&copy; 2025 Gadget Store.</p>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+
+<script>
+    // Buy Now function (adds product to cart and proceeds to checkout)
+    function buyNow(name, price) {
+    const product = { name, price };
+    localStorage.setItem('selectedProduct', JSON.stringify(product));
+    window.location.href = "customer.html"; // Redirect to customer details page
+}
+function confirmPayment() {
+    const selectedMethod = document.querySelector('input[name="payment-method"]:checked');
+    
+    if (!selectedMethod) {
+        alert("Please select a payment method.");
+        return;
+    }
+
+    // Show a confirmation message
+    const confirmation = confirm(`You selected ${selectedMethod.value}. Do you want to confirm this payment?`);
+    if (confirmation) {
+        alert(`Thank you for your purchase!`);
+        window.location.href = "index.html"; // Redirect to the homepage after confirmation
+    }
+}
+
+
+    function searchProducts() {
+        let input = document.getElementById("search-bar").value.toLowerCase();
+        let products = document.querySelectorAll("#product-table tbody tr");
+        let noResults = document.getElementById("no-results");
+        let found = false;
+
+        products.forEach(row => {
+            let productName = row.getElementsByTagName("td")[1].innerText.toLowerCase();
+            if (productName.includes(input)) {
+                row.style.display = "";
+                found = true;
+            } else {
+                row.style.display = "none";
+            }
+        });
+
+        noResults.style.display = found ? "none" : "block";
+    }
+</script>
+
+   
+</body>
+</html>

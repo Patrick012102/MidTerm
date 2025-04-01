@@ -1,0 +1,190 @@
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #4bfbbd;
+        margin: 0;
+    }
+    
+    h1 {
+        margin-bottom: 50px;
+        color: white;
+    }
+    
+    table {
+        margin-top: 20px;
+    }
+    
+    table tbody tr:hover {
+    background-color: #06d6f1;
+        transition: background-color 0.3s;
+    }
+    
+    
+    img {
+        transition: transform 0.3s ease;
+        width: 200px;
+        height: 100px;
+        
+    }
+    
+    img:hover {
+        transform: scale(1.1);
+    }
+    
+    
+    .btn {
+        padding: 10px 20px;
+        text-transform: uppercase;
+    }
+    
+    body {
+        animation: fadeIn 1s ease-in;
+    }
+
+    header {
+        background-color: rgb(0, 0, 0);
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        position: relative;
+    }
+    header nav {
+        display: flex; /* Use flexbox layout */
+        justify-content: start; /* Align items to the right */
+        padding-top: 20px; /* Add some space between the title and navigation */
+    }
+header nav ul h6 a {
+
+    color: white;
+    font-size: xx-large;
+}
+
+/* Search Bar Styling */
+.input-group {
+    max-width: 400px;
+    margin: 0 auto 20px;
+}
+
+#search-bar {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* No Results Message */
+#no-results {
+    text-align: center;
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Table Styling */
+#product-table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Header Styling */
+#product-table thead {
+    background-color: #06d6f1;
+    color: rgb(0, 0, 0);
+    text-align: left;
+}
+
+#product-table th {
+    padding: 15px;
+    font-size: 18px;
+}
+
+
+/* Table Data Cell Styling */
+#product-table td {
+    padding: 15px;
+    font-size: 16px;
+    color: #000000;
+}
+
+/* Product Image Styling */
+#product-table img {
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+}
+
+/* Button Styling */
+#product-table .btn-secondary {
+    display: block;
+    margin: auto;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+#product-table .btn-secondary:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #product-table thead {
+        display: none;
+    }
+
+    #product-table, #product-table tbody, #product-table tr, #product-table td {
+        display: block;
+        width: 100%;
+    }
+
+    #product-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #d61313;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    #product-table td {
+        text-align: center;
+        padding: 10px;
+    }
+
+    #product-table td img {
+        width: 80px;
+        height: 80px;
+    }
+
+    #product-table .btn-secondary {
+        width: 100%;
+    }
+}
+tbody {
+    background-color: #faf75a;
+}
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    color: white;
+
+}

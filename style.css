@@ -1,0 +1,331 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #4bfbbd;
+}
+
+h1 {
+    margin-bottom: 50px;
+    color: #4d11f3;
+    font-weight: bolder;
+    
+}
+
+table {
+    margin-top: 20px;
+}
+
+table tbody tr:hover {
+    background-color: #975afa;
+    transition: background-color 0.3s;
+}
+
+
+img {
+    transition: transform 0.3s ease;
+    width: 200px;
+    height: 200px;
+    
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+
+.btn {
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+
+body {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+/* Set the header styles */
+header {
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+/* Style the navigation to move items to the right */
+header nav {
+    display: flex; /* Use flexbox layout */
+    justify-content: flex-end; /* Align items to the right */
+    padding-top: 20px; /* Add some space between the title and navigation */
+}
+
+/* Style the unordered list in the navigation */
+header nav ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+/* Style each list item */
+header nav ul li {
+    margin-right: 20px; /* Add space between each menu item */
+}
+
+/* Style the navigation links */
+header nav ul li a {
+    color: rgb(0, 38, 255);
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+/* Add hover effect to the links */
+header nav ul li a:hover {
+    color: #eefd1a; /* Highlight color on hover */
+}
+
+/* Style for the search bar container */
+.input-group {
+    width: 100%; /* Make the search bar container responsive */
+    max-width: 500px; /* Set the maximum width of the search bar */
+    margin: 0 auto; /* Center align the search bar */
+}
+
+/* Style for the search input */
+#search-bar {
+    height: 40px; /* Set the height of the input */
+    font-size: 1rem; /* Set the font size inside the input field */
+    padding: 0 10px; /* Add padding inside the search bar */
+    width: 100%; /* Set the width to fill the container */
+    border-radius: 5px; /* Optional: rounded corners */
+    border: 1px solid #ccc; /* Border color */
+}
+
+/* Optional: Add focus effect to the search bar */
+#search-bar:focus {
+    border-color: #f8b400; /* Change the border color on focus */
+    outline: none; /* Remove the default outline */
+}
+
+#contact {
+    background-image: url('contact.jpg');  /* Replace with your image URL */
+    background-size: cover;  /* Cover the entire section */
+    background-position: center;  /* Center the background image */
+    padding: 20px;
+    color: rgb(70, 250, 196); /* Adjust text color if necessary */
+}
+#contact li {
+    color: #53ffff;
+}
+#contact a {
+    color: #ffc400;
+}
+#checkout-form {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#checkout-form h2 {
+    text-align: center;
+    color: #343a40;
+}
+
+#product-details {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+div#selected-product {
+    background-color: #ffee02;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+div#product-details {
+    background-color: #ffee02;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#product-details h3 {
+    margin-top: 0;
+    color: black;
+}
+
+#customer-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#customer-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+#customer-details{
+    background-color: #f1f1f1;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#customer-form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#customer-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#customer-form button:hover {
+    background-color: #218838;
+}
+
+#customer-form button[type="button"] {
+    background-color: #dc3545;
+}
+
+#customer-form button[type="button"]:hover {
+    background-color: #c82333;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    color: white;
+
+}
+
+/* Payment Section */
+#payment-method {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#payment-method h2 {
+    text-align: center;
+    color: #343a40;
+}
+
+#payment-method label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #007bff;
+}
+
+#payment-method input[type="radio"] {
+    margin-right: 10px;
+}
+
+#payment-method button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#payment-method button:hover {
+    background-color: #0056b3;
+}
+
+#products {
+    background-color: #fbff00;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next line if necessary */
+    justify-content: center; /* Centers items horizontally */
+    gap: 20px; /* Adds space between products */
+}
+
+.product-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 250px; /* Set a fixed width for consistency */
+    text-align: center;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-item h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.product-item p {
+    font-size: 16px;
+    color: #333;
+}
+
+.product-item button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.product-item button:hover {
+    background-color: #0056b3;
+}
+
+
+
+

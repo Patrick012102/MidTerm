@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gadget Store</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav> 
+        <div class="input-group mb-3">
+            <input type="text" id="search-bar" class="form-control" placeholder="Search products..." onkeyup="searchProducts()">
+        </div>
+        <p id="no-results" style="display: none; text-align: center; color: red;">No products found</p>
+    </header>
+    
+    <section id="products" class="product-container">
+    </section>
+    
+    <section id="checkout-form" style="display: none;">
+        <h2>Checkout Details</h2>
+        <div id="selected-product"></div>
+        <form id="customer-form" onsubmit="proceedToPayment(event)">
+            <label for="customer-name">Full Name:</label>
+            <input type="text" id="customer-name" required placeholder="Enter your full name">
+            <label for="customer-address">Address:</label>
+            <input type="text" id="customer-address" required placeholder="Enter your address">
+            <label for="customer-contact">Contact Number:</label>
+            <input type="text" id="customer-contact" required placeholder="Enter your contact number">
+            <button type="submit">Proceed to Payment</button>
+            <button type="button" onclick="cancelCheckout()">Cancel</button>
+        </form>
+    </section>
+    
+    <section id="contact" class="contact-container">
+        <h2>Contact Information</h2>
+        <p>If you have any questions, feel free to reach out to us:</p>
+        <ul>
+            <li><strong>Email:</strong> cervitopatrick.com</li>
+            <li><strong>Phone:</strong> 09275376925</li>
+            <li><strong>Address:</strong> 123 Gadget St, Tech City, 10101</li>
+            <li><strong>Follow us on social media:</strong></li>
+            <li>
+                <a href="https://facebook.com/gadgetstore" target="_blank">Facebook</a> |
+                <a href="https://twitter.com/gadgetstore" target="_blank">Twitter</a> |
+                <a href="https://instagram.com/gadgetstore" target="_blank">Instagram</a>
+            </li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Gadget Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+const products = [
+    { name: 'Realme 14 Pro 5G', price: 20500.00, image: '14pro.jpg' },
+    { name: 'Realme C75', price: 8499.00, image: 'c75.jpg' },
+    { name: 'Samsung Galaxy S21', price: 45999.00, image: 's21.jpg' },
+    { name: 'iPhone 14', price: 73999.00, image: 'iphone.jpg' },
+    { name: 'Oppo A3x', price: 5499.00, image: 'a3x.jpg'},
+    { name: 'Oppo A96', price: 13999.00, image: 'a96.png' },
+    { name: 'Oppo Reno 12', price: 29999.00, image: 'Reno12.png' },
+    { name: 'oppo Reno 4', price: 14999.00, image: 'Reno4.jpg' },
+    { name: 'Oppo Reno 11', price: 20999.00, image: 'Reno11.jpg' },
+    { name: 'Vivo v29', price: 21999.00, image: 'v29.jpg' },
+    { name: 'Vivo v29E', price: 15499.00, image: 'v29E.png'},
+    { name: 'Vivo v40', price: 25499.00, image: 'V40.png'},
+    { name: 'Vivo v29E', price: 5499.00, image: 'y19s.png'},
+    { name: 'OnePlus 9 Pro', price: 54999.00, image: 'oneplus.jpg' }
+];
+        
+function buyNow(name, price) {
+    document.getElementById("checkout-form").style.display = "block";
+    document.getElementById("products").style.display = "none";
+    let selectedProduct = document.getElementById("selected-product");
+    selectedProduct.innerHTML = `<h3>Selected Product</h3><p>${name} - ₱${price.toFixed(2)}</p>`;
+    localStorage.setItem("selectedProduct", JSON.stringify({ name, price }));
+}
+        
+function proceedToPayment(event) {
+    event.preventDefault();
+    
+    let name = document.getElementById("customer-name").value.trim();
+    let address = document.getElementById("customer-address").value.trim();
+    let contact = document.getElementById("customer-contact").value.trim();
+    
+    if (!name || !address || !contact) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    localStorage.setItem("customerDetails", JSON.stringify({ name, address, contact }));
+    window.location.href = "payment.html";
+}
+
+function cancelCheckout() {
+    document.getElementById("checkout-form").style.display = "none";
+    document.getElementById("products").style.display = "block";
+}
+
+function displayProducts(filteredProducts = products) {
+    const productContainer = document.getElementById('products');
+    productContainer.innerHTML = '';
+    filteredProducts.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+        productDiv.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h2>${product.name}</h2>
+            <p>₱${product.price.toFixed(2)}</p>
+            <button onclick="buyNow('${product.name}', ${product.price})">Buy Now</button>
+        `;
+        productContainer.appendChild(productDiv);
+    });
+}
+        
+function searchProducts() {
+    let input = document.getElementById("search-bar").value.toLowerCase();
+    let filteredProducts = products.filter(product => product.name.toLowerCase().includes(input));
+    displayProducts(filteredProducts);
+    document.getElementById("no-results").style.display = filteredProducts.length ? "none" : "block";
+}
+    
+window.onload = function() {
+    displayProducts();
+};
+    </script>
+</body>
+</html>
